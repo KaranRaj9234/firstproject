@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Login & Sign Up | ShopEase</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <i class="fa-solid fa-truck-fast"></i> Free express shipping on all orders over $50! Use code 
+      <span class="badge-promo">SAVE10</span> for 10% off your order.
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-main">
+        <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>Shop<span class="accent-dot">Ease</span></span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="nav-search">
+          <form class="nav-search-form">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+              <input type="text" placeholder="Search catalog..." />
+              <button type="submit" class="search-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <div class="nav-actions">
+          <a href="products.html?filter=wishlist" class="nav-icon-link" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-icon-link" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div class="nav-auth-slot">
+            <a href="login.html" class="btn btn-outline-nav btn-sm">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="nav-sub">
+      <div class="container">
+        <div class="nav-sub-inner">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">All Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+            <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+            <li><a href="products.html?category=home" class="nav-link">Home & Living</a></li>
+            <li><a href="products.html?category=beauty" class="nav-link">Beauty</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-extra-links">
+            <a href="orders.html" class="nav-link"><i class="fa-solid fa-box"></i> Track Orders</a>
+            <a href="products.html?filter=deals" class="deal-highlight-link">
+              <i class="fa-solid fa-fire"></i> Hot Deals
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>ShopEase</span>
+        </a>
+        <button class="mobile-drawer-close">&times;</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html"><i class="fa-solid fa-store"></i> All Products</a>
+        <a href="categories.html"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+        <a href="login.html" class="active"><i class="fa-solid fa-user"></i> Login / Sign Up</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="auth-page">
+    <div class="container">
+      
+      <!-- Login / Signup Tabbed Card -->
+      <div class="auth-card" id="auth-card-view">
+        <div class="auth-tabs">
+          <button class="auth-tab-btn active" id="tab-login-btn">Sign In</button>
+          <button class="auth-tab-btn" id="tab-signup-btn">Create Account</button>
+        </div>
+
+        <div class="auth-card-body">
+          
+          <!-- One-Click Demo Helper -->
+          <div class="demo-login-box">
+            <p><i class="fa-solid fa-wand-magic-sparkles"></i> Testing this project?</p>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="quickDemoLogin()">
+              <i class="fa-solid fa-key"></i> 1-Click Demo Login
+            </button>
+          </div>
+
+          <!-- Sign In Form -->
+          <form id="login-form">
+            <div class="form-group">
+              <label class="form-label" for="login-email">Email Address</label>
+              <input type="email" id="login-email" class="form-control" placeholder="alex.morgan@example.com" value="alex.morgan@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <label class="form-label" for="login-pass" style="margin-bottom: 0;">Password</label>
+                <a href="#" style="font-size: 0.75rem; color: var(--primary);">Forgot Password?</a>
+              </div>
+              <input type="password" id="login-pass" class="form-control" placeholder="••••••••" value="demo12345" required />
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <input type="checkbox" id="remember-me" checked />
+              <label for="remember-me" style="font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">Remember me on this browser</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In to ShopEase
+            </button>
+          </form>
+
+          <!-- Create Account Form -->
+          <form id="signup-form" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" class="form-control" placeholder="Alex Morgan" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" class="form-control" placeholder="alex@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signup-pass">Create Password</label>
+              <input type="password" id="signup-pass" class="form-control" placeholder="At least 8 characters" required />
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <input type="checkbox" id="terms-agree" required checked />
+              <label for="terms-agree" style="font-size: 0.8rem; color: var(--text-muted);">
+                I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> & <a href="#" style="color: var(--primary);">Privacy Policy</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-user-plus"></i> Create My Account
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+      <!-- Logged In Profile Card (Shown if active user exists) -->
+      <div class="auth-card" id="logged-in-view" style="display: none; text-align: center;">
+        <div class="auth-card-body" style="padding: 3rem 2rem;">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" alt="Avatar" style="width: 5.5rem; height: 5.5rem; border-radius: 50%; margin: 0 auto 1.25rem; object-fit: cover; border: 3px solid var(--primary-light);" />
+          
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent); text-transform: uppercase;">Active Session</span>
+          <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--secondary); margin: 0.25rem 0 0.5rem;" id="profile-user-name">Alex Morgan</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;" id="profile-user-email">alex.morgan@example.com</p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="orders.html" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-box"></i> View My Orders
+            </a>
+            <a href="products.html" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+            </a>
+            <button class="btn btn-outline btn-sm" onclick="logoutUser()" style="color: var(--danger); border-color: var(--border-color); margin-top: 0.5rem;">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEase Inc. All rights reserved. Built with modern HTML, CSS, and JavaScript.</p>
+        <div class="payment-badges-footer">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

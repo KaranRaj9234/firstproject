@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Shopping Cart | ShopEase</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <i class="fa-solid fa-truck-fast"></i> Free express shipping on all orders over $50! Use code 
+      <span class="badge-promo">SAVE10</span> for 10% off your order.
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-main">
+        <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>Shop<span class="accent-dot">Ease</span></span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="nav-search">
+          <form class="nav-search-form">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+              <input type="text" placeholder="Search catalog..." />
+              <button type="submit" class="search-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <div class="nav-actions">
+          <a href="products.html?filter=wishlist" class="nav-icon-link" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-icon-link" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div class="nav-auth-slot">
+            <a href="login.html" class="btn btn-outline-nav btn-sm">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="nav-sub">
+      <div class="container">
+        <div class="nav-sub-inner">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">All Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+            <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+            <li><a href="products.html?category=home" class="nav-link">Home & Living</a></li>
+            <li><a href="products.html?category=beauty" class="nav-link">Beauty</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-extra-links">
+            <a href="orders.html" class="nav-link"><i class="fa-solid fa-box"></i> Track Orders</a>
+            <a href="products.html?filter=deals" class="deal-highlight-link">
+              <i class="fa-solid fa-fire"></i> Hot Deals
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>ShopEase</span>
+        </a>
+        <button class="mobile-drawer-close">&times;</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html"><i class="fa-solid fa-store"></i> All Products</a>
+        <a href="categories.html"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="cart.html" class="active"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+        <a href="login.html"><i class="fa-solid fa-user"></i> Login / Sign Up</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="cart-page">
+    <div class="container">
+      
+      <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+        <h1 class="section-title">Shopping Cart</h1>
+        <p class="section-subtitle" style="margin: 0;">Review your selected items, apply promotional discounts, and proceed to checkout.</p>
+      </div>
+
+      <!-- Empty Cart State -->
+      <div class="empty-cart-card" id="cart-empty-view" style="display: none;">
+        <div class="empty-cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h3>Your cart is currently empty</h3>
+        <p>Looks like you haven't added any items to your shopping cart yet. Browse our trending collections to find something you love!</p>
+        <a href="products.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-bag-shopping"></i> Start Shopping
+        </a>
+      </div>
+
+      <!-- Filled Cart Layout -->
+      <div class="cart-layout" id="cart-filled-view">
+        
+        <!-- Cart Items Column -->
+        <div class="cart-items-card">
+          
+          <!-- Free Shipping Progress Meter -->
+          <div class="free-shipping-meter">
+            <div class="meter-header" id="free-shipping-text">
+              <i class="fa-solid fa-truck-fast"></i> Add more to unlock FREE Express Shipping!
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="free-shipping-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Items List Container -->
+          <div class="cart-items-list" id="cart-items-container">
+            <!-- Rendered by cart.js -->
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+            <a href="products.html" class="btn btn-outline">
+              <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+            </a>
+            <button class="btn btn-outline btn-sm" onclick="Store.clearCart()" style="color: var(--danger); border-color: var(--border-color);">
+              <i class="fa-regular fa-trash-can"></i> Clear Cart
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Order Summary Sidebar -->
+        <aside class="order-summary-box">
+          <h2 class="summary-title">Order Summary</h2>
+
+          <!-- Coupon Code Input -->
+          <div class="coupon-box">
+            <label for="coupon-code-input">Promo or Coupon Code</label>
+            <div class="coupon-input-group">
+              <input type="text" id="coupon-code-input" placeholder="e.g. SAVE10" />
+              <button type="button" id="apply-coupon-btn" class="btn btn-secondary btn-sm">Apply</button>
+            </div>
+            <div id="applied-coupon-display"></div>
+            <small style="color: var(--text-muted); display: block; margin-top: 0.35rem; font-size: 0.75rem;">
+              Try demo codes: <strong>SAVE10</strong> (10% off) or <strong>SHOPEASE20</strong> (20% off)
+            </small>
+          </div>
+
+          <!-- Price Calculation Lines -->
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">$0.00</span>
+          </div>
+
+          <div class="summary-row discount-row" id="summary-discount-row" style="display: none;">
+            <span>Coupon Discount</span>
+            <span id="summary-discount-val">-$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated Shipping</span>
+            <span id="summary-shipping-val">$4.99</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated Tax (8%)</span>
+            <span id="summary-tax-val">$0.00</span>
+          </div>
+
+          <div class="summary-total-row">
+            <span class="label">Total Amount</span>
+            <span class="val" id="summary-final-total">$0.00</span>
+          </div>
+
+          <a href="checkout.html" class="btn btn-primary btn-block btn-lg">
+            <i class="fa-solid fa-lock"></i> Proceed to Checkout
+          </a>
+
+          <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Safe & Encrypted Checkout
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEase Inc. All rights reserved. Built with HTML, CSS, and JavaScript.</p>
+        <div class="payment-badges-footer">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

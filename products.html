@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - All Products Catalog | Filter, Search & Browse</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <i class="fa-solid fa-truck-fast"></i> Free express shipping on all orders over $50! Use code 
+      <span class="badge-promo">SAVE10</span> for 10% off your order.
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-main">
+        <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>Shop<span class="accent-dot">Ease</span></span>
+        </a>
+
+        <!-- Live Search Bar -->
+        <div class="nav-search">
+          <form class="nav-search-form">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+              <input type="text" id="catalog-search-input" placeholder="Search catalog by keyword, brand, or specs..." aria-label="Search catalog" />
+              <button type="submit" class="search-submit-btn" aria-label="Search">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="nav-actions">
+          <a href="products.html?filter=wishlist" class="nav-icon-link" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-icon-link" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div class="nav-auth-slot">
+            <a href="login.html" class="btn btn-outline-nav btn-sm">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="nav-sub">
+      <div class="container">
+        <div class="nav-sub-inner">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link active">All Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+            <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+            <li><a href="products.html?category=home" class="nav-link">Home & Living</a></li>
+            <li><a href="products.html?category=beauty" class="nav-link">Beauty</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-extra-links">
+            <a href="orders.html" class="nav-link"><i class="fa-solid fa-box"></i> Track Orders</a>
+            <a href="products.html?filter=deals" class="deal-highlight-link">
+              <i class="fa-solid fa-fire"></i> Hot Deals
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>ShopEase</span>
+        </a>
+        <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html" class="active"><i class="fa-solid fa-store"></i> All Products</a>
+        <a href="categories.html"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+        <a href="login.html"><i class="fa-solid fa-user"></i> Login / Sign Up</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="catalog-page">
+    <div class="container">
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span>&bull;</span>
+        <span style="color: var(--secondary); font-weight: 600;">Product Catalog</span>
+      </nav>
+
+      <div class="catalog-layout">
+        
+        <!-- Left Filter Sidebar -->
+        <aside class="filters-sidebar">
+          <div class="filter-header">
+            <h3><i class="fa-solid fa-sliders"></i> Filters</h3>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <button id="clear-filters-btn" class="btn-clear-filters">Clear All</button>
+              <button id="close-mobile-filter" class="btn-sm" style="display: none; font-size: 1.25rem;">&times;</button>
+            </div>
+          </div>
+
+          <!-- Category Filter Group -->
+          <div class="filter-group">
+            <h4 class="filter-group-title">Departments</h4>
+            <div class="filter-options">
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="checkbox" class="filter-category-checkbox" value="electronics" />
+                  Electronics
+                </span>
+                <span class="filter-count">5</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="checkbox" class="filter-category-checkbox" value="fashion" />
+                  Fashion & Apparel
+                </span>
+                <span class="filter-count">5</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="checkbox" class="filter-category-checkbox" value="home" />
+                  Home & Kitchen
+                </span>
+                <span class="filter-count">4</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="checkbox" class="filter-category-checkbox" value="beauty" />
+                  Beauty & Personal Care
+                </span>
+                <span class="filter-count">3</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="checkbox" class="filter-category-checkbox" value="sports" />
+                  Sports & Fitness
+                </span>
+                <span class="filter-count">3</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="checkbox" class="filter-category-checkbox" value="books" />
+                  Books & Stationery
+                </span>
+                <span class="filter-count">3</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price Range Filter Group -->
+          <div class="filter-group">
+            <h4 class="filter-group-title">Max Price</h4>
+            <div class="price-slider-wrapper">
+              <input type="range" id="price-range-slider" min="15" max="800" step="10" value="800" />
+              <div class="price-range-values">
+                <span>$15</span>
+                <span id="price-range-display" style="color: var(--primary);">$800</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Rating Filter Group -->
+          <div class="filter-group">
+            <h4 class="filter-group-title">Minimum Rating</h4>
+            <div class="filter-options">
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="radio" name="filter-rating" value="0" checked />
+                  All Ratings
+                </span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="radio" name="filter-rating" value="4.8" />
+                  <span class="rating-stars-filter">★★★★★</span> 4.8 & Up
+                </span>
+              </label>
+              <label class="filter-checkbox-label">
+                <span class="check-left">
+                  <input type="radio" name="filter-rating" value="4.6" />
+                  <span class="rating-stars-filter">★★★★☆</span> 4.6 & Up
+                </span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Content: Toolbar + Product Grid -->
+        <section class="catalog-main">
+          
+          <!-- Top Toolbar -->
+          <div class="catalog-toolbar">
+            <div class="results-count" id="catalog-results-count">
+              Showing <strong>0</strong> products
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <button id="mobile-filter-btn" class="btn btn-outline btn-sm mobile-filter-trigger" style="display: none;">
+                <i class="fa-solid fa-filter"></i> Filters
+              </button>
+
+              <div class="sort-wrapper">
+                <label for="catalog-sort-select">Sort by:</label>
+                <select id="catalog-sort-select" class="sort-select">
+                  <option value="featured">Featured & Recommended</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="newest">New Arrivals</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Filter Chips -->
+          <div class="active-filters-chips" id="active-filter-chips">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Products Grid -->
+          <div class="product-grid" id="catalog-products-grid">
+            <!-- Populated dynamically by products.js -->
+          </div>
+
+          <!-- Empty Catalog State -->
+          <div class="empty-catalog-state" id="catalog-empty-state" style="display: none;">
+            <i class="fa-regular fa-face-frown"></i>
+            <h3>No products found</h3>
+            <p>We couldn't find any products matching your specific filters or search keywords.</p>
+            <button class="btn btn-primary" onclick="resetAllFilters()">Reset All Filters</button>
+          </div>
+
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEase Inc. All rights reserved. Built with modern HTML, CSS, and JavaScript.</p>
+        <div class="payment-badges-footer">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

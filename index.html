@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - Shop Smart, Live Better | Modern E-Commerce</title>
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <i class="fa-solid fa-truck-fast"></i> Free express shipping on all orders over $50! Use code 
+      <span class="badge-promo">SAVE10</span> for 10% off your order.
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-main">
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <span>Shop<span class="accent-dot">Ease</span></span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="nav-search">
+          <form class="nav-search-form">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+              <input type="text" placeholder="Search headphones, shoes, diffusers, books..." aria-label="Search products" />
+              <button type="submit" class="search-submit-btn" aria-label="Search">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Nav Action Icons -->
+        <div class="nav-actions">
+          <!-- Wishlist -->
+          <a href="products.html?filter=wishlist" class="nav-icon-link" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <!-- Cart -->
+          <a href="cart.html" class="nav-icon-link" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <!-- Login / Profile Slot -->
+          <div class="nav-auth-slot">
+            <a href="login.html" class="btn btn-outline-nav btn-sm">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Nav: Category Links -->
+    <div class="nav-sub">
+      <div class="container">
+        <div class="nav-sub-inner">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">All Products</a></li>
+            <li><a href="categories.html" class="nav-link">Categories</a></li>
+            <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+            <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+            <li><a href="products.html?category=home" class="nav-link">Home & Living</a></li>
+            <li><a href="products.html?category=beauty" class="nav-link">Beauty</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-extra-links">
+            <a href="orders.html" class="nav-link"><i class="fa-solid fa-box"></i> Track Orders</a>
+            <a href="products.html?filter=deals" class="deal-highlight-link">
+              <i class="fa-solid fa-fire"></i> Hot Deals
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>ShopEase</span>
+        </a>
+        <button class="mobile-drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+
+      <div class="mobile-drawer-search" style="margin-bottom: 1.5rem;">
+        <form class="nav-search-form">
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+            <input type="text" placeholder="Search items..." />
+          </div>
+        </form>
+      </div>
+
+      <div class="mobile-drawer-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html"><i class="fa-solid fa-store"></i> All Products</a>
+        <a href="categories.html"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+        <a href="login.html"><i class="fa-solid fa-user"></i> Login / Sign Up</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i class="fa-solid fa-sparkles"></i> 2026 Premium Collection Is Here
+            </div>
+            <h1 class="hero-title">
+              Shop Smart, <br />
+              <span class="gradient-text">Live Better</span>
+            </h1>
+            <p class="hero-desc">
+              Discover carefully curated lifestyle essentials, cutting-edge personal tech, and everyday luxury crafted for your comfort and style.
+            </p>
+            <div class="hero-actions">
+              <a href="products.html" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-bag-shopping"></i> Start Shopping
+              </a>
+              <a href="products.html?filter=deals" class="btn btn-outline btn-lg" style="color: white; border-color: rgba(255,255,255,0.4);">
+                <i class="fa-solid fa-bolt"></i> Today's Deals
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <h4>25K+</h4>
+                <p>Happy Shoppers</p>
+              </div>
+              <div class="stat-item">
+                <h4>99.4%</h4>
+                <p>Satisfaction Rate</p>
+              </div>
+              <div class="stat-item">
+                <h4>2-Day</h4>
+                <p>Fast Delivery</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card-main">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" alt="Sony WH-1000XM5 Premium Headphones" />
+            </div>
+            <div class="hero-floating-badge">
+              <div class="badge-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <strong style="display:block; font-size: 0.95rem;">100% Authentic</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Verified Quality Guaranteed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Propositions Strip -->
+    <section class="features-strip">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="feature-info">
+              <h4>Free Express Delivery</h4>
+              <p>On all domestic orders over $50</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+            <div class="feature-info">
+              <h4>Secure Payment</h4>
+              <p>Safe mock checkout & COD options</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <div class="feature-info">
+              <h4>30-Day Free Returns</h4>
+              <p>No questions asked return policy</p>
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="feature-info">
+              <h4>24/7 Dedicated Support</h4>
+              <p>Friendly support team ready to help</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Explore Collections</span>
+          <h2 class="section-title">Shop by Category</h2>
+          <p class="section-subtitle">Browse through our most popular lifestyle, tech, and wellness departments.</p>
+        </div>
+
+        <div class="category-cards-grid" id="home-categories-grid">
+          <!-- Dynamically populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Deal of the Day Section with Live Countdown -->
+    <section class="container">
+      <div class="deals-section">
+        <div class="deals-grid">
+          <div class="deals-content">
+            <span class="deal-badge"><i class="fa-solid fa-fire"></i> Limited Time Offer</span>
+            <h2>Deal of the Day: Save up to 40%</h2>
+            <p>Upgrade your audio experience with premium noise-cancelling tech and studio-grade acoustics. Grab yours before the timer expires!</p>
+            
+            <div class="countdown-timer">
+              <div class="timer-unit">
+                <span class="timer-num" id="deal-hours">14</span>
+                <span class="timer-label">Hours</span>
+              </div>
+              <div class="timer-unit">
+                <span class="timer-num" id="deal-mins">45</span>
+                <span class="timer-label">Mins</span>
+              </div>
+              <div class="timer-unit">
+                <span class="timer-num" id="deal-secs">20</span>
+                <span class="timer-label">Secs</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <a href="product-detail.html?id=prod-el-1" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-bag-shopping"></i> Claim Deal Now
+              </a>
+              <span style="font-weight: 700; color: #fde047; font-size: 1.25rem;">Now $329.99 <span style="text-decoration: line-through; font-size: 0.95rem; color: #cbd5e1;">$399.99</span></span>
+            </div>
+          </div>
+
+          <div class="deal-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80" alt="Exclusive Deal" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Handpicked For You</span>
+          <h2 class="section-title">Featured Products</h2>
+          <p class="section-subtitle">Top-tier picks chosen for exceptional craftsmanship, durability, and customer reviews.</p>
+        </div>
+
+        <div class="product-grid" id="featured-products-grid">
+          <!-- Dynamically populated by main.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="products.html" class="btn btn-outline btn-lg">
+            View All Products <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best-Selling Products Section -->
+    <section class="products-section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" style="background: var(--warning-light); color: #b45309;">Community Favorites</span>
+          <h2 class="section-title">Best-Selling Products</h2>
+          <p class="section-subtitle">The most loved items with thousands of verified 5-star customer ratings.</p>
+        </div>
+
+        <div class="product-grid" id="best-sellers-grid">
+          <!-- Dynamically populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="products-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" style="background: var(--accent-light); color: var(--accent);">Just Landed</span>
+          <h2 class="section-title">New Arrivals</h2>
+          <p class="section-subtitle">Stay ahead with the freshest releases from our top designers and creators.</p>
+        </div>
+
+        <div class="product-grid" id="new-arrivals-grid">
+          <!-- Dynamically populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews / Testimonials -->
+    <section class="reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Customer Stories</span>
+          <h2 class="section-title">Loved by Thousands</h2>
+          <p class="section-subtitle">Read real experiences from verified customers shopping on ShopEase.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "The headphones arrived in less than two days! Noise cancellation is flawless on my flights, and the checkout process was remarkably smooth."
+            </p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah Jenkins" class="author-avatar" />
+              <div class="author-info">
+                <h4>Sarah Jenkins</h4>
+                <p><i class="fa-solid fa-circle-check verified"></i> Verified Buyer &bull; New York</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "The Italian leather crossbody bag exceeded my expectations. Real genuine leather, heavy hardware, and looks much more expensive than it cost."
+            </p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="David Miller" class="author-avatar" />
+              <div class="author-info">
+                <h4>David Miller</h4>
+                <p><i class="fa-solid fa-circle-check verified"></i> Verified Buyer &bull; Austin</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "ShopEase has become my go-to store for gifts and wellness items. The ceramic aroma diffuser runs quietly all day and looks stunning in my living room."
+            </p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="Elena Rostova" class="author-avatar" />
+              <div class="author-info">
+                <h4>Elena Rostova</h4>
+                <p><i class="fa-solid fa-circle-check verified"></i> Verified Buyer &bull; Seattle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Get 15% Off Your First Order</h2>
+          <p>Subscribe to our newsletter for exclusive discounts, new product alerts, and seasonal shopping guides.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); Store.showToast('Thank you for subscribing! Check your inbox for your 15% code.', 'success'); this.reset();">
+            <input type="email" placeholder="Enter your email address..." required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Comprehensive Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <span>ShopEase</span>
+          </a>
+          <p>
+            Your destination for modern, elevated shopping. Bringing you the highest quality products with guaranteed satisfaction and fast, secure delivery.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">All Products</a>
+            <a href="categories.html">Categories</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="orders.html">My Orders</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html#faq">Shipping & Delivery</a>
+            <a href="contact.html#faq">Returns & Refunds</a>
+            <a href="contact.html#faq">FAQ Help Center</a>
+            <a href="orders.html">Order Status</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-links">
+            <p><i class="fa-solid fa-location-dot"></i> 100 Innovation Way, Suite 400<br/>San Francisco, CA 94105</p>
+            <p><i class="fa-solid fa-phone"></i> +1 (800) 555-EASE</p>
+            <p><i class="fa-solid fa-envelope"></i> support@shopease.com</p>
+            <p><i class="fa-solid fa-clock"></i> Mon-Fri: 8:00 AM - 8:00 PM EST</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEase Inc. All rights reserved. Built with HTML, CSS, and JavaScript.</p>
+        <div class="payment-badges-footer">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="American Express"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

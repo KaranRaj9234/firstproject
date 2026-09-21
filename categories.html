@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop by Categories | ShopEase</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .categories-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .cat-showcase-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .cat-showcase-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+    .cat-showcase-img {
+      width: 100%;
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-showcase-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-smooth);
+    }
+    .cat-showcase-card:hover .cat-showcase-img img {
+      transform: scale(1.08);
+    }
+    .cat-tag-pill {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .cat-showcase-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .cat-showcase-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cat-showcase-desc {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .cat-showcase-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+    @media (max-width: 900px) {
+      .categories-full-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .categories-full-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <i class="fa-solid fa-truck-fast"></i> Free express shipping on all orders over $50! Use code 
+      <span class="badge-promo">SAVE10</span> for 10% off your order.
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-main">
+        <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>Shop<span class="accent-dot">Ease</span></span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="nav-search">
+          <form class="nav-search-form">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+              <input type="text" placeholder="Search catalog..." />
+              <button type="submit" class="search-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <div class="nav-actions">
+          <a href="products.html?filter=wishlist" class="nav-icon-link" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-icon-link" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div class="nav-auth-slot">
+            <a href="login.html" class="btn btn-outline-nav btn-sm">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Nav -->
+    <div class="nav-sub">
+      <div class="container">
+        <div class="nav-sub-inner">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">All Products</a></li>
+            <li><a href="categories.html" class="nav-link active">Categories</a></li>
+            <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+            <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+            <li><a href="products.html?category=home" class="nav-link">Home & Living</a></li>
+            <li><a href="products.html?category=beauty" class="nav-link">Beauty</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-extra-links">
+            <a href="orders.html" class="nav-link"><i class="fa-solid fa-box"></i> Track Orders</a>
+            <a href="products.html?filter=deals" class="deal-highlight-link">
+              <i class="fa-solid fa-fire"></i> Hot Deals
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>ShopEase</span>
+        </a>
+        <button class="mobile-drawer-close">&times;</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html"><i class="fa-solid fa-store"></i> All Products</a>
+        <a href="categories.html" class="active"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+        <a href="login.html"><i class="fa-solid fa-user"></i> Login / Sign Up</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main style="padding: 3rem 0 5rem;">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">Curated Departments</span>
+        <h1 class="section-title">Explore All Categories</h1>
+        <p class="section-subtitle">Discover premium items hand-selected across our major product departments.</p>
+      </div>
+
+      <div class="categories-full-grid" id="categories-full-grid">
+        <!-- Rendered via script -->
+      </div>
+
+      <!-- Category Promo Banner -->
+      <div style="background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%); color: white; border-radius: var(--radius-xl); padding: 3.5rem 2.5rem; text-align: center;">
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem;">Can't decide where to start?</h2>
+        <p style="color: #c7d2fe; max-width: 550px; margin: 0 auto 1.75rem; font-size: 1.05rem;">
+          View our entire collection of 24+ premium products, sorted and filterable by price, rating, and new releases.
+        </p>
+        <a href="products.html" class="btn btn-primary btn-lg" style="background: white; color: var(--primary);">
+          <i class="fa-solid fa-store"></i> Browse Full Catalog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEase Inc. All rights reserved. Built with HTML, CSS, and JavaScript.</p>
+        <div class="payment-badges-footer">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('categories-full-grid');
+      if (container && typeof CATEGORIES_DATA !== 'undefined') {
+        container.innerHTML = CATEGORIES_DATA.map(cat => `
+          <div class="cat-showcase-card">
+            <div class="cat-showcase-img">
+              <img src="${cat.image}" alt="${cat.name}" loading="lazy" />
+              <span class="cat-tag-pill">${cat.tag}</span>
+            </div>
+            <div class="cat-showcase-body">
+              <div class="cat-showcase-title">
+                <span>${cat.name}</span>
+                <i class="fa-solid ${cat.icon}" style="color: var(--primary); font-size: 1.25rem;"></i>
+              </div>
+              <p class="cat-showcase-desc">${cat.description}</p>
+              <div class="cat-showcase-footer">
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">
+                  ${cat.itemCount} Curated Items
+                </span>
+                <a href="products.html?category=${cat.id}" class="btn btn-outline btn-sm">
+                  Explore <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

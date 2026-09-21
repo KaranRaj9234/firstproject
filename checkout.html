@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | ShopEase</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <i class="fa-solid fa-lock"></i> 256-Bit SSL Encrypted Safe & Secure Demo Checkout
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="nav-main">
+        <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>Shop<span class="accent-dot">Ease</span></span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="nav-search">
+          <form class="nav-search-form">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+              <input type="text" placeholder="Search catalog..." />
+              <button type="submit" class="search-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <div class="nav-actions">
+          <a href="products.html?filter=wishlist" class="nav-icon-link" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </a>
+
+          <a href="cart.html" class="nav-icon-link" title="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </a>
+
+          <div class="nav-auth-slot">
+            <a href="login.html" class="btn btn-outline-nav btn-sm">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <span>ShopEase</span>
+        </a>
+        <button class="mobile-drawer-close">&times;</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html"><i class="fa-solid fa-store"></i> All Products</a>
+        <a href="categories.html"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        <a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+        <a href="login.html"><i class="fa-solid fa-user"></i> Login / Sign Up</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="checkout-page">
+    <div class="container">
+      
+      <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+        <h1 class="section-title">Express Checkout</h1>
+        <p class="section-subtitle" style="margin: 0;">Complete your shipping information and choose your safe demo payment option.</p>
+      </div>
+
+      <form id="checkout-form">
+        <div class="checkout-layout">
+          
+          <!-- Left Column: Shipping & Payment -->
+          <div class="checkout-form-column">
+            
+            <!-- Step 1: Shipping Address -->
+            <div class="checkout-section-card">
+              <h2 class="checkout-step-title">
+                <span class="step-num">1</span>
+                Shipping Address
+              </h2>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="checkout-name">Full Name *</label>
+                  <input type="text" id="checkout-name" class="form-control" placeholder="e.g. Alex Morgan" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-email">Email Address *</label>
+                  <input type="email" id="checkout-email" class="form-control" placeholder="alex.morgan@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-phone">Phone Number *</label>
+                <input type="tel" id="checkout-phone" class="form-control" placeholder="+1 (555) 019-2834" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-address">Street Address *</label>
+                <input type="text" id="checkout-address" class="form-control" placeholder="Apartment, suite, unit, building, floor, street" required />
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="checkout-city">City *</label>
+                  <input type="text" id="checkout-city" class="form-control" placeholder="e.g. San Francisco" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-state">State / Province *</label>
+                  <input type="text" id="checkout-state" class="form-control" placeholder="e.g. California" required />
+                </div>
+              </div>
+
+              <div class="form-group" style="max-width: 250px;">
+                <label class="form-label" for="checkout-pin">PIN / Postal Code *</label>
+                <input type="text" id="checkout-pin" class="form-control" placeholder="e.g. 94105" required />
+              </div>
+            </div>
+
+            <!-- Step 2: Payment Method (Safe Mock Flow) -->
+            <div class="checkout-section-card">
+              <h2 class="checkout-step-title">
+                <span class="step-num">2</span>
+                Payment Method
+              </h2>
+
+              <div class="safe-mock-notice">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span><strong>Demo Safe Sandbox:</strong> No real money or real bank credentials are collected. Use any sample numbers to complete the test flow.</span>
+              </div>
+
+              <div class="payment-methods-grid">
+                <!-- Card Option -->
+                <div class="payment-method-card selected" data-method="card">
+                  <div class="payment-method-left">
+                    <input type="radio" name="payment-method" id="pay-card" checked />
+                    <div>
+                      <div class="payment-method-title">Credit / Debit Card (Mock)</div>
+                      <div class="payment-method-desc">Instant confirmation with sandbox card</div>
+                    </div>
+                  </div>
+                  <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                  </div>
+                </div>
+
+                <!-- UPI / QR Option -->
+                <div class="payment-method-card" data-method="upi">
+                  <div class="payment-method-left">
+                    <input type="radio" name="payment-method" id="pay-upi" />
+                    <div>
+                      <div class="payment-method-title">UPI / QR Code (Mock)</div>
+                      <div class="payment-method-desc">Google Pay, PhonePe, Paytm or QR Scan</div>
+                    </div>
+                  </div>
+                  <div class="payment-icons">
+                    <i class="fa-solid fa-qrcode"></i>
+                  </div>
+                </div>
+
+                <!-- Net Banking -->
+                <div class="payment-method-card" data-method="netbanking">
+                  <div class="payment-method-left">
+                    <input type="radio" name="payment-method" id="pay-netbanking" />
+                    <div>
+                      <div class="payment-method-title">Net Banking</div>
+                      <div class="payment-method-desc">All major domestic & international banks</div>
+                    </div>
+                  </div>
+                  <div class="payment-icons">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                </div>
+
+                <!-- COD Option -->
+                <div class="payment-method-card" data-method="cod">
+                  <div class="payment-method-left">
+                    <input type="radio" name="payment-method" id="pay-cod" />
+                    <div>
+                      <div class="payment-method-title">Cash on Delivery (COD)</div>
+                      <div class="payment-method-desc">Pay in cash or digital card when your order arrives</div>
+                    </div>
+                  </div>
+                  <div class="payment-icons">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Fields Details -->
+              <!-- Card Pane -->
+              <div class="payment-fields-pane" id="card-payment-pane">
+                <div class="form-group">
+                  <label class="form-label">Card Number</label>
+                  <input type="text" id="mock-card-num" class="form-control" placeholder="4242 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242" value="4242 4242 4242 4242" />
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label">Expiry (MM/YY)</label>
+                    <input type="text" id="mock-card-exp" class="form-control" placeholder="12/28" value="12/28" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">CVV / CVC</label>
+                    <input type="password" id="mock-card-cvv" class="form-control" placeholder="123" value="123" maxlength="4" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- UPI Pane -->
+              <div class="payment-fields-pane" id="upi-payment-pane" style="display: none; text-align: center;">
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Enter demo UPI ID or scan QR code on arrival:</p>
+                <input type="text" class="form-control" placeholder="username@okhdfcbank" value="shopperease@upi" style="max-width: 320px; margin: 0 auto 0.75rem;" />
+                <div style="font-size: 0.8rem; color: var(--accent); font-weight: 600;">
+                  <i class="fa-solid fa-check-circle"></i> Fast UPI Instant Verification Connected
+                </div>
+              </div>
+
+              <!-- Net Banking Pane -->
+              <div class="payment-fields-pane" id="netbanking-payment-pane" style="display: none;">
+                <label class="form-label">Select Bank</label>
+                <select class="form-control">
+                  <option>JPMorgan Chase Bank</option>
+                  <option>Bank of America</option>
+                  <option>Wells Fargo</option>
+                  <option>Citibank</option>
+                  <option>HDFC Bank</option>
+                  <option>ICICI Bank</option>
+                </select>
+              </div>
+
+              <!-- COD Pane -->
+              <div class="payment-fields-pane" id="cod-payment-pane" style="display: none;">
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                  <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> You will pay the courier partner upon parcel delivery. Please keep exact change ready.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Column: Order Summary Sidebar -->
+          <aside class="order-summary-box">
+            <h2 class="summary-title">Order Items Review</h2>
+
+            <!-- Mini Cart Items List -->
+            <div class="checkout-items-preview" id="checkout-items-preview">
+              <!-- Rendered via checkout.js -->
+            </div>
+
+            <!-- Cost Lines -->
+            <div style="padding-top: 1rem; border-top: 1px solid var(--border-color);">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="checkout-subtotal">$0.00</span>
+              </div>
+
+              <div class="summary-row discount-row" id="checkout-discount-row" style="display: none;">
+                <span>Discount Applied</span>
+                <span id="checkout-discount-val">-$0.00</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span id="checkout-shipping">$0.00</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Sales Tax (8%)</span>
+                <span id="checkout-tax">$0.00</span>
+              </div>
+
+              <div class="summary-total-row">
+                <span class="label">Total to Pay</span>
+                <span class="val" id="checkout-total">$0.00</span>
+              </div>
+            </div>
+
+            <button type="submit" id="place-order-btn" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-lock"></i> Place Order Now
+            </button>
+
+            <div style="text-align: center; margin-top: 1rem;">
+              <a href="cart.html" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">
+                <i class="fa-solid fa-arrow-left"></i> Return to Shopping Cart
+              </a>
+            </div>
+          </aside>
+
+        </div>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShopEase Inc. All rights reserved. Built with HTML, CSS, and JavaScript.</p>
+        <div class="payment-badges-footer">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
